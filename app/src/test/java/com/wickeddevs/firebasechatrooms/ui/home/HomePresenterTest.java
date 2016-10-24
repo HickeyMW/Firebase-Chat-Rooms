@@ -55,7 +55,7 @@ public class HomePresenterTest {
 
     @Test
     public void selectedChatRoom_noUsernameSaved_displayNameChangeUi() {
-        String chatRoomName = "Chat Room Name " + TestHelper.randomString();
+        String chatRoomName = TestHelper.randomString("Chat Room Name");
         String username = null;
 
         helper_selectedChatRoom(chatRoomName, username);
@@ -64,8 +64,8 @@ public class HomePresenterTest {
 
     @Test
     public void selectedChatRoom_usernameSaved_displayChatRoomUi() {
-        String chatRoomName = "Chat Room Name " + TestHelper.randomString();
-        String username = "Username " + TestHelper.randomString();
+        String chatRoomName =  TestHelper.randomString("Chat Room Name");
+        String username = TestHelper.randomString("Username");
 
         helper_selectedChatRoom(chatRoomName, username);
         verify(view).displayChatRoomUi(chatRoomName, username);
@@ -97,7 +97,14 @@ public class HomePresenterTest {
     public void helper_changeUsername(String username) {
         viewCreated_logInIfNotLoggedIn_displayChatRooms();
         when(nameService.getUsername()).thenReturn(username);
-        presenter.changeName();
+        presenter.selectedChangeName();
         verify(nameService).getUsername();
+    }
+
+    @Test
+    public void newUserNameSelected_usernameIsSaved() {
+        String userName = TestHelper.randomString();
+        presenter.changeName(userName);
+        verify(nameService).setUserName(userName);
     }
 }

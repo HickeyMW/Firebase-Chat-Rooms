@@ -9,18 +9,17 @@
     tools:context="com.wickeddevs.firebasechatrooms.ui.chatroom.ChatRoomActivity">
 
     <android.support.v7.widget.RecyclerView
-        android:layout_marginStart="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginRight="8dp"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/btnSend"
-        android:visibility="invisible"
-        android:id="@+id/rvMessages"/>
+        android:id="@+id/rvMessages"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"/>
 
     <EditText
         android:layout_width="0dp"
@@ -56,6 +55,24 @@
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_height="2dp"
         android:background="@drawable/shadow_bottom"
-        android:alpha="0"/>
+        android:alpha="0"
+        android:id="@+id/vBottomShadow"/>
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="16dp"
+        android:visibility="invisible"/>
 
 </android.support.constraint.ConstraintLayout>

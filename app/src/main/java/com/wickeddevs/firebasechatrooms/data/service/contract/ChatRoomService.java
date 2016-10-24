@@ -20,9 +20,9 @@ public interface ChatRoomService {
 
     void getChatRoomNames(ChatRoomNamesCallback callback);
 
-    void sendMessage(String message, String chatRoomName);
+    void sendMessage(String message, String username, String chatRoomName);
 
-    void joinChatRoom(String chatRoomName, String userName);
+    void joinChatRoom(String chatRoomName, String userName, ChatRoomMessagesListener listener);
 
     void leaveChatRoom(String chatRoomName);
 }

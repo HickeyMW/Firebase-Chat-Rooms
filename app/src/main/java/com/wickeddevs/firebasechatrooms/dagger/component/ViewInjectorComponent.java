@@ -2,6 +2,7 @@ package com.wickeddevs.firebasechatrooms.dagger.component;
 
 import com.wickeddevs.firebasechatrooms.dagger.module.PresenterModule;
 import com.wickeddevs.firebasechatrooms.dagger.scope.ActivityScope;
+import com.wickeddevs.firebasechatrooms.ui.chatroom.ChatRoomActivity;
 import com.wickeddevs.firebasechatrooms.ui.home.HomeActivity;
 
 import dagger.Component;
@@ -11,4 +12,6 @@ import dagger.Component;
 public interface ViewInjectorComponent {
 
     void inject(HomeActivity homeActivity);
+
+    void inject(ChatRoomActivity chatRoomActivity);
 }

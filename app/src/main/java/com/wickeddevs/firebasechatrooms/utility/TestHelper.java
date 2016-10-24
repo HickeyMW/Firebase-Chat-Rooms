@@ -20,6 +20,10 @@ public class TestHelper {
         return UUID.randomUUID().toString();
     }
 
+    public static String randomString(String string) {
+        return string + " " + UUID.randomUUID().toString();
+    }
+
     public static ArrayList<String> randomStringList() {
         int size = randomInt(3, 5);
         ArrayList<String> strings = new ArrayList<>();
